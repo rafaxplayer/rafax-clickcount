@@ -38,7 +38,7 @@ class Links_Table_Custom extends WP_List_Table
 	function column_link($item)
     {
 		$actions = array(
-            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'cltd_example')),
+            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Eliminar', 'cltd_example')),
         );
 
         return sprintf(
@@ -108,7 +108,7 @@ class Links_Table_Custom extends WP_List_Table
 	{
 		global $wpdb;
         $table = $wpdb->prefix . 'rafax_clickcount';
-
+        
         if ('delete' === $this->current_action()) {
             $ids = isset($_REQUEST['id']) ? $_REQUEST['id'] : array();
             if (is_array($ids)) $ids = implode(',', $ids);
